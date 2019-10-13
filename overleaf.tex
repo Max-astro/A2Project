@@ -1,0 +1,540 @@
+\usepackage{graphicx}   
+%%
+%% Beginning of file 'sample62.tex'
+%%
+%% Modified 2018 January
+%%
+%% This is a sample manuscript marked up using the
+%% AASTeX v6.2 LaTeX 2e macros.
+%%
+%% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
+%% (Copyright 2000-2015).  See the classfile for details.
+
+%% AASTeX requires revtex4-1.cls (http://publish.aps.org/revtex4/) and
+%% other external packages (latexsym, graphicx, amssymb, longtable, and epsf).
+%% All of these external packages should already be present in the modern TeX 
+%% distributions.  If not they can also be obtained at www.ctan.org.
+
+%% The first piece of markup in an AASTeX v6.x document is the \documentclass
+%% command. LaTeX will ignore any data that comes before this command. The 
+%% documentclass can take an optional argument to modify the output style.
+%% The command below calls the preprint style  which will produce a tightly 
+%% typeset, one-column, single-spaced document.  It is the default and thus
+%% does not need to be explicitly stated.
+%%
+%%
+%% using aastex version 6.2
+%%\documentclass{aastex62}
+
+%% The default is a single spaced, 10 point font, single spaced article.
+%% There are 5 other style options available via an optional argument. They
+%% can be envoked like this:
+%%
+%% \documentclass[argument]{aastex62}
+%% 
+%% where the layout options are:
+%%
+%%  twocolumn   : two text columns, 10 point font, single spaced article.
+%%                This is the most compact and represent the final published
+%%                derived PDF copy of the accepted manuscript from the publisher
+%%  manuscript  : one text column, 12 point font, double spaced article.
+%%  preprint    : one text column, 12 point font, single spaced article.  
+%%  preprint2   : two text columns, 12 point font, single spaced article.
+%%  modern      : a stylish, single text column, 12 point font, article with
+%% 		  wider left and right margins. This uses the Daniel
+%% 		  Foreman-Mackey and David Hogg design.
+%%  RNAAS       : Preferred style for Research Notes which are by design 
+%%                lacking an abstract and brief. DO NOT use \begin{abstract}
+%%                and \end{abstract} with this style.
+%%
+%% Note that you can submit to the AAS Journals in any of these 6 styles.
+%%
+%% There are other optional arguments one can envoke to allow other stylistic
+%% actions. The available options are:
+%%
+%%  astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%  tighten      : Makes baselineskip slightly smaller, only works with 
+%%                 the twocolumn substyle.
+%%  times        : uses times font instead of the default
+%%  linenumbers  : turn on lineno package.
+%%  trackchanges : required to see the revision mark up and print its output
+%%  longauthor   : Do not use the more compressed footnote style (default) for 
+%%                 the author/collaboration/affiliations. Instead print all
+%%                 affiliation information after each name. Creates a much
+%%                 long author list but may be desirable for short author papers
+%%
+%% these can be used in any combination, e.g.
+%%
+\documentclass[twocolumn]{aastex62}
+%%
+%% AASTeX v6.* now includes \hyperref support. While we have built in specific
+%% defaults into the classfile you can manually override them with the
+%% \hypersetup command. For example,
+%%
+%%\hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%%
+%% will change the color of the internal links to red, the links to the
+%% bibliography to green, the file links to cyan, and the external links to
+%% magenta. Additional information on \hyperref options can be found here:
+%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+%% Tells LaTeX to search for image files in the 
+%% current directory as well as in the figures/ folder.
+\graphicspath{{./}{figures/}}
+
+%% Reintroduced the \received and \accepted commands from AASTeX v5.2
+\received{XXX}
+\revised{XXX}
+\accepted{XXX}
+%% Command to document which AAS Journal the manuscript was submitted to.
+%% Adds "Submitted to " the arguement.
+\submitjournal{AAS journal}
+
+%% Mark up commands to limit the number of authors on the front page.
+%% Note that in AASTeX v6.2 a \collaboration call (see below) counts as
+%% an author in this case.
+%
+%\AuthorCollaborationLimit=3
+%
+%% Will only show Schwarz, Muench and "the AAS Journals Data Scientist 
+%% collaboration" on the front page of this example manuscript.
+%%
+%% Note that all of the author will be shown in the published article.
+%% This feature is meant to be used prior to acceptance to make the
+%% front end of a long author article more manageable. Please do not use
+%% this functionality for manuscripts with less than 20 authors. Conversely,
+%% please do use this when the number of authors exceeds 40.
+%%
+%% Use \allauthors at the manuscript end to show the full author list.
+%% This command should only be used with \AuthorCollaborationLimit is used.
+
+%% The following command can be used to set the latex table counters.  It
+%% is needed in this document because it uses a mix of latex tabular and
+%% AASTeX deluxetables.  In general it should not be needed.
+%\setcounter{table}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+\shorttitle{Barred galaxies in Illustris simulationsSample article}
+\shortauthors{Zhou et al.}
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%  \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+
+\title{Barred galaxies in Illustris-1 and IllustrisTNG simulations: A comprison study}
+
+%% LaTeX will automatically break titles if they run longer than
+%% one line. However, you may use \\ to force a line break if
+%% you desire. In v6.2 you can include a footnote in the title.
+
+%% A significant change from earlier AASTEX versions is in the structure for 
+%% calling author and affilations. The change was necessary to implement 
+%% autoindexing of affilations which prior was a manual process that could 
+%% easily be tedious in large author manuscripts.
+%%
+%% The \author command is the same as before except it now takes an optional
+%% arguement which is the 16 digit ORCID. The syntax is:
+%% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
+%%
+%% This will hyperlink the author name to the author's ORCID page. Note that
+%% during compilation, LaTeX will do some limited checking of the format of
+%% the ID to make sure it is valid.
+%%
+%% Use \affiliation for affiliation information. The old \affil is now aliased
+%% to \affiliation. AASTeX v6.2 will automatically index these in the header.
+%% When a duplicate is found its index will be the same as its previous entry.
+%%
+%% Note that \altaffilmark and \altaffiltext have been removed and thus 
+%% can not be used to document secondary affiliations. If they are used latex
+%% will issue a specific error message and quit. Please use multiple 
+%% \affiliation calls for to document more than one affiliation.
+%%
+%% The new \altaffiliation can be used to indicate some secondary information
+%% such as fellowships. This command produces a non-numeric footnote that is
+%% set away from the numeric \affiliation footnotes.  NOTE that if an
+%% \altaffiliation command is used it must come BEFORE the \affiliation call,
+%% right after the \author command, in order to place the footnotes in
+%% the proper location.
+%%
+%% Use \email to set provide email addresses. Each \email will appear on its
+%% own line so you can put multiple email address in one \email call. A new
+%% \correspondingauthor command is available in V6.2 to identify the
+%% corresponding author of the manuscript. It is the author's responsibility
+%% to make sure this name is also in the author list.
+%%
+%% While authors can be grouped inside the same \author and \affiliation
+%% commands it is better to have a single author for each. This allows for
+%% one to exploit all the new benefits and should make book-keeping easier.
+%%
+%% If done correctly the peer review system will be able to
+%% automatically put the author and affiliation information from the manuscript
+%% and save the corresponding author the trouble of entering it by hand.
+
+%%\correspondingauthor{August Muench}
+%%\email{greg.schwarz@aas.org, gus.muench@aas.org}
+
+\author{Zebang, Zhou}
+\affil{School of Physics and Astronomy, Sun Yat-Sen University, Zhuhai campus, No. 2, Daxue Road \\
+Zhuhai, Guangdong, 519082, China}
+
+%%\author[0000-0002-0786-7307]{August Muench}
+\author{Weishan, Zhu}
+\affil{School of Physics and Astronomy, Sun Yat-Sen University, Zhuhai campus, No. 2, Daxue Road \\
+Zhuhai, Guangdong, 519082, China}
+
+
+\author{Yang, Wang}
+\affil{School of Physics and Astronomy, Sun Yat-Sen University, Zhuhai campus, No. 2, Daxue Road \\
+Zhuhai, Guangdong, 519082, China}
+\nocollaboration
+
+\author{Long-Long, Feng}
+\affil{School of Physics and Astronomy, Sun Yat-Sen University, Zhuhai campus, No. 2, Daxue Road \\
+Zhuhai, Guangdong, 519082, China}
+\affiliation{PMO, Nanjing, CAS}
+
+
+%% Note that the \and command from previous versions of AASTeX is now
+%% depreciated in this version as it is no longer necessary. AASTeX 
+%% automatically takes care of all commas and "and"s between authors names.
+
+%% AASTeX 6.2 has the new \collaboration and \nocollaboration commands to
+%% provide the collaboration status of a group of authors. These commands 
+%% can be used either before or after the list of corresponding authors. The
+%% argument for \collaboration is the collaboration identifier. Authors are
+%% encouraged to surround collaboration identifiers with ()s. The 
+%% \nocollaboration command takes no argument and exists to indicate that
+%% the nearby authors are not part of surrounding collaborations.
+
+%% Mark off the abstract in the ``abstract'' environment. 
+\begin{abstract}
+
+This example manuscript is intended to serve as a tutorial and template for
+authors to use when writing their own AAS Journal articles. The manuscript
+includes a history of \aastex\ and documents the new features in the
+previous versions as well as the new features in version 6.2. This
+manuscript includes many figure and table examples to illustrate these new
+features.  Information on features not explicitly mentioned in the article
+can be viewed in the manuscript comments or more extensive online
+documentation. Authors are welcome replace the text, tables, figures, and
+bibliography with their own and submit the resulting manuscript to the AAS
+Journals peer review system.  The first lesson in the tutorial is to remind
+authors that the AAS Journals, the Astrophysical Journal (ApJ), the
+Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all
+have a 250 word limit for the abstract.  If you exceed this length the
+Editorial office will ask you to shorten it.
+
+\end{abstract}
+
+%% Keywords should appear after the \end{abstract} command. 
+%% See the online documentation for the full list of available subject
+%% keywords and the rules for their use.
+\keywords{editorials, notices --- 
+miscellaneous --- catalogs --- surveys}
+
+%% From the front matter, we move on to the body of the paper.
+%% Sections are demarcated by \section and \subsection, respectively.
+%% Observe the use of the LaTeX \label
+%% command after the \subsection to give a symbolic KEY to the
+%% subsection for cross-referencing in a \ref command.
+%% You can use LaTeX's \ref and \label commands to keep track of
+%% cross-references to sections, equations, tables, and figures.
+%% That way, if you change the order of any elements, LaTeX will
+%% automatically renumber them.
+%%
+%% We recommend that authors also use the natbib \citep
+%% and \citet commands to identify citations.  The citations are
+%% tied to the reference list via symbolic KEYs. The KEY corresponds
+%% to the KEY in the \bibitem in the reference list below. 
+
+\section{Introduction} \label{sec:intro}
+Stellar bars are present in the inner region of many disc galaxies in local and high redshift universe. The reported frequency of bars declines from 50\% to 70\% at z=0 to $\sim 20\%$ at z=0.8 in different observational studies(e.g., sheth, et al. 2008). Bar may play important role in driving the secure evolution of disc galaxies by redistributing the gas, stars and even dark matter, as well as the angular momentum associated to these components(see Kormendy 2013, for a review). For instance, bars could induce gas flowing into the galaxy central region and contribute to the formation of pseudo-bulges and bulges. On the other hand, the origin, growth and destroy of bars is a key piece of the secular galaxy evolution puzzle, and many details are still unclear. The answer to this issue could helps to explain the presence or absence of bars in disc galaxies with different properties. 
+
+Bar formation can be either triggered by the internal secular evolution or by external processes, including merge, tidal effects of nearby galaxies. Early theoretical and N-body simulation studies suggested that massive cold stellar disks are highly unstable to disk instability, and bars can grow quickly in these stellar disks(e.g., Ostriker \& Peebles 1973; Toomre 1977b, 1981;...). However, this scenario is likely inaccurate to explain the origin of bars in realistic galaxies, because these studies did not take account of several factors, such as halos, gas component, and physics related to gas, i.e., cooling, star formation and feedback, and the impact of external processes(Athanassoula 2012; Kormendy 2013).  
+
+Later idealized simulation works including halos, gas component and gas physics shows that bar formation may be a gradual process, and both the halos and gas play important roles(e.g. ref see A12 P2, P16 ). Athanassoula(2002) demonstrated that halo would firstly delay bar formation, but then can strengthen the bar during secular evolution by absorbing the angular momentum of stars. The strength of bars in simulated isolate galaxies was found to correlate with the amount of angular momentum absorbed by halos, and depend on the halo central concentrations(Athanassoula \& Misiriotis 2002; Athanassoula 2003). Many simulations shown that gas would obstruct the growth of bar by giving angular momentum to it. Consequently, bars will form much later and are much weaker in gas-rich disc galaxies(e.g., A13 P16, Berentzen et al. 2004; Bournaud, Combes \& Semelin 2005; Berentzen et al. 2007; Athanassoula et al. 2013). tidal? 
+
+These idealized simulations, however, usually study the formation and evolution of bars in isolated disc galaxies. Those disc galaxies were set up at the beginning of simulations assuming varies models, not results of self-consistent evolution. In addition, the effect of tidal force,  if it was included, was modelled in simplified ways. To overcome these two limitations, several works have investigated the origin and development of bars in more realistic environment using cosmological zoom-in simulations(e.g. Kraljic et al. 2012; Scannapieco \& Athanassoula 2012; Spinoso, et al. 2017). These simulations shows that bars can emerge naturally in the concord $\Lambda$CDM cosmology, and most of the bars became easily observable only after $z=\sim 0.4-0.5$.
+
+Recently, galaxy formation and evolution in cosmic volume, up to a cubic of 100 Mpc, and high resolution, down to kpc-100pc, have been studied in state-of-art cosmological hydrodynamical simulations such as Illustris-1, EAGLE, Illustris-TNG(Vogelsberger et al. 2014; Schaye et al. 2015; Nelson 2018). The properties of bars in disc galaxies in these simulations, including their frequency, origin and correlation with gas fraction, stellar mass have been examined(Algorry et al. 2017; Peschken \& Lokas 2019). Some of the results in different simulations are consistent with each other, and are in agreement with previous simulations and observations, such as the bar fraction decrease with gas fraction, and increase with stellar mass. Nevertheless, some properties, for instance, the bar fraction, show notable differences. Bar fraction in EAGLE is about 40\%, which is generally consistent with observation. But, the fraction in Illustris-1 is much lower, $\sim 21\%$, and increase slightly as redshift increase. 
+
+These discrepancies over bar fraction between simulations may be partially caused by the different baryon physics, such as the feedback from star formation and AGN. It would be worthwhile to carry out a comparison of barred galaxies in the Illustris and IllustrisTNG simulations. As these two simulations share the same initial condition, such a comparison study would find out the impact of baryon physics on the formation and evolution of bars. Note that, during the preparation of this work, Rosas-Guevara et al. (2019) publish their analyse on the bar fraction in Illustris-TNG, which is 40\% and is much higher than the fraction in Illustris.
+
+This paper is organised as follows. We introduce the simulations and galaxies samples in Section \ref{sec:samples}. The overall features of barred galaxies such as the visual impression, bar fractions, and their origin in two simulations are shown in Section 3. We explore the roles of gas fraction, black hole, dark matter halo shape in host galaxies during the evolution of bars in Section 4. A comparison of bar properties between matched galaxies in the Illustris and IllustrisTNG simulations is presented in Section 5. We discuss our findings and comparison with previous works in Scetion 6. We summarize our results in Section 7. 
+
+\section{SIMULATIONS AND Galaxies Samples} \label{sec:samples}
+\subsection{The Illustris-1 and TNG100 simulations}
+In this paper, we make use of public released data from the Illustris-1 and TNG100 simulations. These two simulations used the same initial condition, which was described in detail in \citep{ }. There were, however, some differences in cosmological parameters and baryon physics between these two simulations.
+
+Illustris project \citep{ } is a series of large-scale hydrodynamical simulations of galaxy formation, which used the moving-mesh code AREPO \citep{ }. The cosmological parameters of Illustris simulations are consistent with the latest Wilkinson Microwave Anisotropy Probe (WMAP9) measurements \citep{ }: $\Omega_m =\Omega_{dm} + \Omega_b = 0.2726$, $\Omega_{\Lambda}$ = 0.7274, $\Omega_b$ = 0.0456, $\sigma_8$ = 0.809, $n_s$ = 0.963, and $H_0$ = 100$h \ \rm{km}\ {s}^{-1} \rm{Mpc}^{-1}$ with $h$ = 0.704. The IllustrisTNG project \citep{ } is the successor of the original Illustris simulation, it updates ‘next generation’ galaxy formation model which includes new physics and numerical improvements, as well as refinements to the original Illustris simulations. IllustrisTNG simulations' cosmological parameters are consistent with the recent Planck constraints \citep{ }: $\Omega_m = 0.3089$, $\Omega_b$ = 0.0486, $\Omega_\lambda$ = 0.6911, $\sigma_8$ = 0.8159, $n_s$ = 0.9667, $h$ = 0.6774.
+
+Illstris-1 and TNG100 simulations have the same side lengths 75$h^{-1}$ $\approx$ 100 Mpc, both used a number of $2 \times 1820^3$ dark matter and gas particles. The mass of each dark matter and gas particle are $6.3 \time 10^6 M_{\odot}$ and $1.6 \time 10^6 M_{\odot}$ in Illustris-1, and $6.3 \time 10^6 M_{\odot}$ and $1.4 \time 10^6 M_{\odot}$ in TNG100. Both simulation evolve from a starting redshift z = 127 to the present time z = 0. Illustris-1 simulation produce 134 snapshots, while TNG100 has 100 snapshots.
+
+differences in baryon physics?
+
+\subsection{Galaxies Samples}
+We make use of Illustris and IllustrisTNG public released data, including SubFind Subhalo catalog \citep{ } and the SubLink merger tree, it let us to know how each halo evolved over time. In Illustris project, galaxy is named as Subhalo, and dark matter halo is named Halo. 
+
+We basically follow the method in Peschken \& Lokas(2019) to find barred galaxies in simulation samples. 
+In order to study the bars, one shall first locate the disk galaxies. 
+\citep{N. Peschken} used two parameters provided by the simulations to determine disk galaxies, i.e., the stellar circularities, $\epsilon$, and the flatness of galaxies. 
+Star particles that belonging to galaxy disc are expected to have circularity parameter $\epsilon$ close to 1. 
+Moreover, the IllustrisTNG projects provided the fractional mass $f_\epsilon$ of stellar particles with $\epsilon > 0.7$ for each galaxy. 
+This was first given by Genel(2015) \citep{ } as a measure of the fraction of stellar mass in the disc component. 
+If a galaxy has more than 20\% of their stellar mass have $\epsilon > 0.7$, i.e., $f_\epsilon>0.2$, this galaxy will be identified as a disk galaxy. 
+In addition, the flatness of a disk galaxies should be less than 0.7. 
+This parameter was calculated from axis ratios and the eigenvalues of the stellar mass tensor. 
+Stellar circularities and galaxy flastness datas we used are provided by Genel \citep{ }.
+(???Values provided by Illustris and Illustris-TNG or calculated by own code?) DONE.
+
+We have used the method to select disk galaxies in the simulation samples at redshift z = 0. In TNG-100, we found 2658 disk galaxies with stellar mass greater than  $10^{10} M_\odot$, and 1269 disk galaxies with stellar particles more than 40000. 
+
+The numbers of disk galaxies are almost the same with the Illustris-1 data, which we found 1232 disk galaxies with over 40000 stellar particles. 
+(please provide exact number!) DONE.
+
+Then we used the $A_2$ parameter \citep{} to identify whether a disc galaxy has a bar or not. $A_2$ is defined from the Fourier components(Athanassoula et al 2013): 
+\begin{equation}
+    a_m(R) = \sum_{i}^{N_R}M_{i}cos(m\phi_i)
+\end{equation}
+\begin{equation}
+    b_m(R) = \sum_{i}^{N_R}M_{i}sin(m\phi_i)
+\end{equation}
+where $N_R$ is the number of star particles inside a given cylindrical radius R, $M_i$ is the $i$-th star particle's mass, and $\phi_i$ is its azimuthal angle \citep{ }.
+$A_2(R)$ is a function of cylindrical radius R. We measure the bar strength by using $A_2(R)$ maximum value $A^{max}_2$.
+\begin{equation}
+    A_2(R) = \frac{\sqrt{a_{2}^{2} + b_{2}^{2}}}{a_0}
+\end{equation}
+\citep{ } had found that in Illustris-1, many galaxies with A2 parameter between 0.15 and 0.2 that visually clearly show a bar, and we came to the same result in Illustris-TNG. (what is the meaning of this sentence???)
+So we calculate all disk galaxies' A2 parameter, and used the threshold value of 0.15 in the A2 parameter to determine whether a galaxy is barred or not. Further more, we carry a visual inspection to the images of galaxies with A2 larger than 0.15 to check if they're barred or not. We identify 110 and 698 barred galaxies in Illustris-1 and TNG100 respectively at z=0. 
+
+\section{Result} 
+\subsection{Galaxy images}
+\begin{figure}[htbp]
+\begin{center}
+\plotone{figures/barfig.pdf}
+\caption{Bar fraction as a function of stellar mass in the Illustris-1(green filled circle) and TNG100(red filled circle) simulations. Histogram of the stellar mass of 2658 disk galaxies with $M_* > 10^{10}M_\odot$ in the TNG100 is shown in cyan color.}
+\end{center}
+\end{figure}
+
+By checking the galaxy images at redshift $z=0$, we eliminated some galaxy that A2 parameters over 0.15 but do not look like barred visually.
+In Fig.1, we divide the images by different stellar mass and compared galaxies between two simulations. 
+We find that galaxies in TNG simulation look more like real barred galaxies than galaxies in Illustris-1 simulation, especially in the low mass bins. 
+We can see that small galaxy (have less than 40000 stellar particles) in Illustris-1 its A2 parameter over 0.15, but doesn't look like a real barred disk galaxy. 
+However, small galaxy in TNG simulation looks much regular.
+
+In order to better compare the differences between the two simulations,
+we decide not to use small galaxies data, just like \citep{ } work.
+
+
+
+\subsection{Bar fraction} 
+\begin{figure}[htbp]
+\begin{center}
+\plotone{TotalBarFraction_V2.pdf}
+\plotone{oldFrac.pdf}
+\caption{Blue dots int upper figure are the bar fraction of disk galaxies(all 2658 disk galaxies) in TNG-100 simulation. Lower figure came from \citep{N. Peschken 2018}, the red dots samples are 1232 disk galaxies with more than 40000 stellar particles in Illustris-1. Histogram in both figures are the stellar masses of galaxies in that simulation, bin size: 0.083. Green dots are bar fraction data from \citep{D´ıaz-Garc´ıa .2016}.
+}
+\end{center}
+\end{figure}
+
+(include previous results, simulation and observation) DONE.
+
+We see in Fig.2 that the fraction of barred galaxies in TNG simulation is much higher than Illustris-1 simulation in all mass bins at redshift $z=0$.
+And than we calculated the disk galaxies' A2 parameter in several redshift of snapshots(Fig.3), find that in TNG simulation, the fraction doesn't change over redshift. 
+This result is completely different with Illustris-1 simulation.
+The divergence of bar fraction between two simulations is shown in each redshift.
+
+
+\label{subsec:tables}
+\begin{figure*}[htbp]
+\begin{center}
+\plottwo{figures/TNG__sum_barFrationWithZ.png}{figures/il1_SUM_barFrationWithZ.png}
+\caption{Cumulative fraction of A2 parameter of Disk galaxies with more than $40 000$ stellar particles in different redshift. Left: TNG-100 data set, right: Illustris-1 data set.}
+\end{center}
+\end{figure*}
+
+(These galaxies are disc galaxy or not at high z???)
+
+
+\subsection{Origin of bars}
+
+\subsection{bar formaing time $t_bar$}
+
+
+\section{Impact of gas fraction, black hole and dark matter halo} 
+\subsection{SFR and Gas fraction}
+Fig.4 histogram of the gas fraction of disk galaxies in two simulations. 
+It's shown that the gas fraction of disk galaxies in TNG are generally lower than galaxies in Illustris-1 simulation at redshift z=0. 
+And, even in the same gas fraction bin, galaxy bar fraction in TNG are much higher than in Illustris-1.
+So we choose these barred galaxies at redshift z=0 as our default sample to trace bar formation and galaxy evolutionary history.
+
+\label{subsec:tables}
+\begin{figure}[htbp]
+\begin{center}
+\plotone{TNG_Illustris-1_GF_Z=0.png}
+\caption{Bar fraction changes with Gas fraction at redshift z=0. In both two simulations, disk galaxy bar fraction decreases as there are more gases inside galaxy.}
+\end{center}
+\end{figure}
+
+\label{subsec:tables}
+\begin{figure}[htbp]
+\begin{center}
+\plotone{zbar.pdf}
+\caption{The relaionship between zbar and galaxy gas fraction at redshift z=2 of default samples in both simulations.}
+\end{center}
+\end{figure}
+
+Fig.6 shown the default samples gas fraction(inside the twice of half mass radius) evolve with redshift.
+Left line represents TNG's galaxies, right line represents Illustris-1 galaxies.
+We find that galaxies gas fraction in TNG simulation are lower than galaxies in Illustris-1 at each redshift. 
+The unbarred galaxies in Illustris-1 simulation have the highest gas fraction compare to others samples. 
+Seems like galaxy bar formation and evolution will be suspended by gas component inside disk galaxy.
+Some simulations \citep{E. Athanassoula et. al. 2012} about bar formation in secular evolution have the same result.
+\label{subsec:tables}
+\begin{figure*}[h!]
+\begin{center}
+\plotone{Global_tng-il1_GasFraction.pdf}
+\caption{Barred galaxies Gas fraction are much lower than unbarred galaxies in both two simulations.}
+\end{center}
+\end{figure*}
+
+Generally speaking, if galaxy contain large amounts of gas will trigger intense star formation activity.
+However, barred galaxies in Illustris-1 simulation have a significant higher star formation rate,
+even though their gas fraction are relatively low in the statistics.
+(Maybe in Illustris-1 star forming cause strong feedback event,  it become the main reason of the disk galaxy gas component outflow.)
+\label{subsec:tables}
+\begin{figure*}[h!]
+\centering
+\begin{center}
+\plotone{Global_tng-il1_SFR.pdf}
+\caption{In Illustris-1, barred galaxies SFR are much higher than unbarred galaxies.}
+\end{center}
+\end{figure*}
+
+\subsection{Black hole mass and accretion rate}
+We also trace the evolution of default sample's central supermassive black hole. 
+Fig.8 shows that barred galaxies in both simulation have similar black hole mass,
+but BH mass of unbarred disk galaxies in Illustris-1 are extremely low.
+
+This divergence of mass of galaxy central supermassive black hole is because barred galaxies' black hole accretion rates are higher than unbarred galaxies at higher redshifts, 
+The relationship between black hole accretion rates and redshifts is revealed in Fig.9.
+
+
+
+\begin{figure*}[h!]
+\centering
+\begin{center}
+\plotone{Global_tng-il1_BHmass.png}
+\caption{Those unbarred galaxies in Illustris-1 have lower BH mass than other data set, it might due to the BH accretion rate are low in high-z($z > 0.5$)}
+\end{center}
+\end{figure*}
+
+\begin{figure*}[h!]
+\centering
+\begin{center}
+\plotone{Global_tng-il1_BHdot.png}
+\caption{Left:TNG data, right: Illustris-1 data. }
+\end{center}
+\end{figure*}
+
+
+\section{evolution of bars in matched halos } 
+\subsection{Halo match algorithm}
+In order to understand differences in the disk galaxy formation and galaxy bar evolution, 
+we used the Lagrangian region matching algorithm of \cite{Lovell et al. (2014).} to identify pairs of analogue disk galaxies across the two simulations.
+This algorithm match halo base on comparing halo's Lagrangian regions in initial condition(ICs) of different simulation and check that they overlap.
+
+\subsection{Matched galaxy samples}
+We selected all disk galaxies with over 40000 stellar particles, and try to match their counterparts in another simulation. 
+Finally, we matched 1079 galaxies, most of them has different morphology in different simulations.
+Table.1 is the matched galaxies morphology distribution.
+We will focus on the case that disk galaxy was barred in one simulation but it's counterpart in another simulation didn't form bar structure.
+
+%%table.1
+\begin{table}[]
+\caption{Matched galaxies' morphology}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|l|}{\multirow{}{}{}} & \multicolumn{3}{c|}{Illustris-1} \\ \cline{3-5} 
+\multicolumn{2}{|l|}{}                  & bar    & unbarred    & others    \\ \hline
+\multirow{}{}   & bar        & 27     & 243         & 167       \\ \cline{2-5} 
+     {TNG-100}  & unbarred   & 12     & 200         & 164       \\ \cline{2-5} 
+                & others     & 24     & 242         & 0         \\ \hline
+\end{tabular}
+\end{table}
+
+%% The reference list follows the main body and any appendices.
+%% Use LaTeX's thebibliography environment to mark up your reference list.
+%% Note \begin{thebibliography} is followed by an empty set of
+%% curly braces.  If you forget this, LaTeX will generate the error
+%% "Perhaps a missing \item?".
+%%
+%% thebibliography produces citations in the text using \bibitem-\cite
+%% cross-referencing. Each reference is preceded by a
+%% \bibitem command that defines in curly braces the KEY that corresponds
+%% to the KEY in the \cite commands (see the first section above).
+%% Make sure that you provide a unique KEY for every \bibitem or else the
+%% paper will not LaTeX. The square brackets should contain
+%% the citation text that LaTeX will insert in
+%% place of the \cite commands.
+
+%% We have used macros to produce journal name abbreviations.
+%% \aastex provides a number of these for the more frequently-cited journals.
+%% See the Author Guide for a list of them.
+
+%% Note that the style of the \bibitem labels (in []) is slightly
+%% different from previous examples.  The natbib system solves a host
+%% of citation expression problems, but it is necessary to clearly
+%% delimit the year from the author name used in the citation.
+%% See the natbib documentation for more details and options.
+
+%%\begin{thebibliography}{}
+
+% \bibitem[Bertin \& Arnouts(1996)]{1996A&AS..117..393B} Bertin, E., \& Arnouts, S.\ 1996, \aaps, 117, 393 
+% \bibitem[Corrales(2015)]{2015ApJ...805...23C} Corrales, L.\ 2015, \apj, 805, 23
+% \bibitem[Ferland et al.(2013)]{2013RMxAA..49..137F} Ferland, G.~J., Porter, R.~L., van Hoof, P.~A.~M., et al.\ 2013, \rmxaa, 49, 137
+% \bibitem[Hanisch \& Biemesderfer(1989)]{1989BAAS...21..780H} Hanisch, R.~J., \& Biemesderfer, C.~D.\ 1989, \baas, 21, 780 
+% \bibitem[Lamport(1994)]{lamport94} Lamport, L. 1994, LaTeX: A Document Preparation System, 2nd Edition (Boston, Addison-Wesley Professional)
+% \bibitem[Schwarz et al.(2011)]{2011ApJS..197...31S} Schwarz, G.~J., Ness, J.-U., Osborne, J.~P., et al.\ 2011, \apjs, 197, 31  
+% \bibitem[Vogt et al.(2014)]{2014ApJ...793..127V} Vogt, F.~P.~A., Dopita, M.~A., Kewley, L.~J., et al.\ 2014, \apj, 793, 127  
+
+%%\end{thebibliography}
+
+%% This command is needed to show the entire author+affilation list when
+%% the collaboration and author truncation commands are used.  It has to
+%% go at the end of the manuscript.
+%\allauthors
+
+%% Include this line if you are using the \added, \replaced, \deleted
+%% commands to see a summary list of all changes at the end of the article.
+%\listofchanges
+
+\end{document}
+
+% End of file `sample62.tex'.
