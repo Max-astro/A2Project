@@ -37,10 +37,10 @@ def HaloProgenitors(haloID, simu):
     '''
     if simu == 'TNG' or simu == 'tng':
         url = 'http://www.tng-project.org/api/TNG100-1/snapshots/99/subhalos/%d/sublink/simple.json' % haloID
-        savedir = '/mnt/f/Linux/localRUN/tng_DiskMerTree/'
+        savedir = '/Users/max/OneDrive/Documents/tng_DiskMerTree/'
     else:
         url = 'http://www.tng-project.org/api/Illustris-1/snapshots/135/subhalos/%d/sublink/simple.json' % haloID
-        savedir = '/mnt/f/Linux/localRUN/il1_DiskMerTree/'
+        savedir = '/Users/max/OneDrive/Documents/il1_DiskMerTree'
     try:
         sublink = get(url,savedir=savedir,filename=str(haloID))
     except requests.exceptions.ConnectionError:
@@ -49,12 +49,11 @@ def HaloProgenitors(haloID, simu):
     print("halo ", haloID, "finished.")
     return sublink
 
-bar2ot = np.load('/mnt/f/Linux/localRUN/Match/tng2ot.npy', allow_pickle=1).item()
-
-d = 0
-l = 0
-for haloID in bar2ot.values():
-    if os.path.exists('/mnt/f/Linux/localRUN/il1_DiskMerTree/%d.json' % haloID):
+diskID = np.load('/Users/max/OneDrive/Documents/diskID_il1.npy')
+l=0
+d=0
+for haloID in diskID:
+    if os.path.exists('/Users/max/OneDrive/Documents/il1_DiskMerTree/%d.json' % haloID):
         d += 1
     else:
         HaloProgenitors(haloID, 'il1')

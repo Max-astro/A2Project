@@ -118,8 +118,8 @@ Redshift = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1.0, 1.5, 2.0]
 
 
 
-tng2il1 = np.load('F:/Linux/localRUN/Match/tng2il1_allsub.npy',allow_pickle=1).item()
-A2list = np.load('f:/Linux/localRUN/il1_A2withRedshift.npy',allow_pickle=1).item()
+tng2il1 = np.load('F:/Linux/localRUN/Match/tng2il1_allsub.npy', allow_pickle=1).item()
+A2list = np.load('f:/Linux/localRUN/il1_A2withRedshift.npy', allow_pickle=1).item()
 
 bar2bar = np.load('F:/npy/bar2bar.npy',allow_pickle=1).item()
 bar2disk = np.load('f:/npy/bar2no.npy',allow_pickle=1).item()

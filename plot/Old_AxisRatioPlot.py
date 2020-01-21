@@ -50,10 +50,10 @@ def MassTensorEigenVals(coor, mas, half_r):
 
 
 # path_99 = 'f:/Linux/data/TNG/cutoff/disk_99'
-diskID = np.load('f:/Linux/localRUN/diskID_4WP.npy')
-barredID = np.load('f:/Linux/localRUN/barredID_4WP_TNG.npy')
-MTE = np.load('f:/Linux/localRUN/MTE_TNGdisk_4WP.npy').item()
-A2list = np.load('f:/Linux/localRUN/TNG_A2withRedshift.npy').item()
+diskID = np.load('f:/Linux/localRUN/diskID_4WP.npy', allow_pickle=1)
+barredID = np.load('f:/Linux/localRUN/barredID_4WP_TNG.npy', allow_pickle=1)
+MTE = np.load('f:/Linux/localRUN/MTE_TNGdisk_4WP.npy', allow_pickle=1).item()
+A2list = np.load('f:/Linux/localRUN/TNG_A2withRedshift.npy', allow_pickle=1).item()
 '''
 Illustris-1 Snapshot-Redshift:
 snap_127 z=0.1
